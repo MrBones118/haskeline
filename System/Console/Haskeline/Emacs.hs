@@ -99,4 +99,4 @@ modifyWord f im = IMode (reverse (f ys1) ++ xs) ys2
 
 capitalize :: [Grapheme] -> [Grapheme]
 capitalize [] = []
-capitalize (c:cs) = modifyBaseChar toUpper c : cs
+capitalize (c:cs) = modifyBaseChar toUpper c : (map (modifyBaseChar toLower) cs)
